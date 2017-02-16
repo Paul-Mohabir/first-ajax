@@ -12,14 +12,58 @@ $('#ajax_request').on('click', function() {
 //close ajax_request
 });
 
-$('#ajax_ping-pong').on('click', function() {
+$('#ajax_pong').on('click', function() {
   $.ajax({
     url: 'http://first-ajax-api.herokuapp.com/pong',
     method: 'GET',
     // data: 'html',
     dataType: 'text'
-  }).fail(function(data) {
-    console.log("didn't work");
+  }).always(function(data) {
+    console.log("the request is over  ");
+  });
+});
+
+$('#ajax_ping').on('click', function() {
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/ping',
+    method: 'GET',
+    // data: 'html',
+    dataType: 'text'
+  }).done(function(data) {
+    console.log(data);
+  });
+});
+
+$('#count').on('click', function() {
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/count',
+    method: 'GET',
+    // data: 'html',
+    dataType: 'text'
+  }).done(function(data) {
+    console.log(data);
+  })
+})
+
+$('#time').on('click', function() {
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/time',
+    method: 'get',
+    data: 'Europe/Sofia',
+    dataType: 'text'
+  }).done(function(time) {
+    console.log(time);
+  })
+})
+
+$('#a_car').on('click', function(){
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/a_car',
+    method: 'GET',
+    //data:
+    dataType: 'html'
+  }).done(function(data){
+    $('#car').append(data);
   });
 });
 //the closing brackets below is for the ,document
