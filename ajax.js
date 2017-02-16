@@ -1,10 +1,13 @@
 $(document).ready(function () {
+  /* Your code goes here */
+$('#ajax_request').on('click', function() {
   $.ajax({
     url: 'http://first-ajax-api.herokuapp.com/',
     method: 'GET',
-    data: 'html',
+    // data: 'html',
     dataType: 'text'
-  })
-  /* Your code goes here */
-
+  });
+//close ajax_request
+});
+//the closing brackets below is for the ,document
 });
